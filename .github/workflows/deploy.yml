@@ -34,7 +34,7 @@ jobs:
         run: npm ci
 
       - name: Build Angular app
-        run: npm run build -- --base-href /portfolio/
+        run: npm run build -- --base-href /Portfolio/
 
       - name: Copy 404 for SPA support
         run: cp dist/pratik-portfolio/browser/index.html dist/pratik-portfolio/browser/404.html
