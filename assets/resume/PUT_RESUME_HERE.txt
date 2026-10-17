@@ -1,0 +1,1 @@
+Put your PDF resume in this folder. Then add a Download Resume button/link in the Home component if desired.
