@@ -1,0 +1,142 @@
+<section id="certifications" class="certifications-section">
+  <div class="container">
+
+    <div class="section-header">
+      <p class="section-label">06. Certifications</p>
+      <h2 class="section-title">Verified credentials & learning.</h2>
+      <p class="section-subtitle">
+        Continuous professional development in Artificial Intelligence and Enterprise Database Engineering.
+      </p>
+    </div>
+
+    <div class="certifications-grid">
+      @for (cert of certifications; track cert.id) {
+        <div class="cert-card" [style.--accent-color]="cert.accentColor">
+
+          <!-- Certificate Image Preview -->
+          @if (cert.imageSrc && !cert.imageFailed) {
+            <div class="cert-preview-wrapper" (click)="openCertificate(cert)" title="Click to view certificate in full screen">
+              <img
+                [src]="cert.imageSrc"
+                [alt]="cert.title"
+                class="cert-preview-img"
+                (error)="handleImageError(cert)"
+              />
+              <div class="cert-preview-overlay">
+                <span class="preview-badge">
+                  <i class="bi bi-arrows-fullscreen"></i> View Certificate
+                </span>
+              </div>
+            </div>
+          }
+
+          <div class="cert-card-header">
+            <div class="cert-icon-box">
+              <i class="bi" [class]="cert.icon"></i>
+            </div>
+            <div class="cert-badges">
+              <span class="badge-issuer">
+                <i class="bi bi-patch-check-fill"></i> {{ cert.issuerBadge }}
+              </span>
+              <span class="badge-category">
+                <i class="bi" [class]="cert.categoryIcon"></i> {{ cert.category }}
+              </span>
+            </div>
+          </div>
+
+          <div class="cert-body">
+            <h3 class="cert-title">{{ cert.title }}</h3>
+            <p class="cert-issuer">Issued by <strong>{{ cert.issuer }}</strong></p>
+
+            <div class="cert-meta">
+              @if (cert.issueDate) {
+                <span class="meta-item">
+                  <i class="bi bi-calendar3"></i> {{ cert.issueDate }}
+                </span>
+              }
+              @if (cert.credentialId) {
+                <span class="meta-item">
+                  <i class="bi bi-qr-code"></i> ID: {{ cert.credentialId }}
+                </span>
+              }
+            </div>
+
+            <p class="cert-desc">{{ cert.description }}</p>
+
+            <div class="cert-skills">
+              @for (skill of cert.skills; track skill) {
+                <span class="skill-tag">{{ skill }}</span>
+              }
+            </div>
+          </div>
+
+          <div class="cert-footer">
+            <div class="status-indicator">
+              <span class="pulse-dot"></span>
+              <span class="status-text">Verified</span>
+            </div>
+
+            <div class="footer-actions">
+              <button type="button" class="btn-action-primary" (click)="openCertificate(cert)">
+                <i class="bi bi-eye"></i> View Certificate
+              </button>
+              @if (cert.pdfUrl) {
+                <a [href]="cert.pdfUrl" target="_blank" rel="noopener noreferrer" class="btn-action-secondary" title="Open original PDF">
+                  <i class="bi bi-file-earmark-pdf-fill"></i> PDF
+                </a>
+              }
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+
+  </div>
+
+  <!-- Lightbox Modal for Certificate Photos -->
+  @if (selectedCert; as cert) {
+    <div class="cert-modal-backdrop" (click)="closeCertificate()">
+      <div class="cert-modal" (click)="$event.stopPropagation()">
+        <button class="cert-modal-close" type="button" (click)="closeCertificate()" aria-label="Close modal">
+          <i class="bi bi-x-lg"></i>
+        </button>
+
+        <div class="cert-modal-header">
+          <div class="modal-badge">
+            <i class="bi bi-patch-check-fill"></i> {{ cert.issuerBadge }}
+          </div>
+          <h3>{{ cert.title }}</h3>
+          <p>
+            Issued by <strong>{{ cert.issuer }}</strong>
+            @if (cert.issueDate) { · {{ cert.issueDate }} }
+            @if (cert.credentialId) { · Credential ID: {{ cert.credentialId }} }
+          </p>
+        </div>
+
+        <div class="cert-modal-image-wrap">
+          <img [src]="cert.imageSrc" [alt]="cert.title" class="cert-modal-image" />
+        </div>
+
+        <div class="cert-modal-footer">
+          <div class="cert-modal-skills">
+            @for (skill of cert.skills; track skill) {
+              <span class="skill-tag">{{ skill }}</span>
+            }
+          </div>
+
+          <div class="modal-actions">
+            @if (cert.pdfUrl) {
+              <a [href]="cert.pdfUrl" target="_blank" rel="noopener noreferrer" class="btn-pdf-link">
+                <i class="bi bi-file-earmark-pdf-fill"></i> Open Original PDF
+              </a>
+            }
+            <button type="button" class="btn-close-modal" (click)="closeCertificate()">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+
+</section>

@@ -1,0 +1,112 @@
+<section id="projects" class="projects-section">
+  <div class="projects-bg"></div>
+  <div class="container">
+
+    <div class="section-header centered">
+      <p class="section-label">04. Projects</p>
+      <h2 class="section-title">Things I've built.</h2>
+      <p class="section-subtitle">A selection of real-world projects I've developed professionally.</p>
+    </div>
+
+    <!-- Featured Project -->
+    <div class="featured-card" (click)="openProject(projects[0])">
+      <div class="featured-left">
+        <span class="featured-label">
+          <i class="bi bi-star-fill"></i> Featured Project · Team Leader
+        </span>
+        <h3>{{ projects[0].title }}</h3>
+        <p class="project-type">{{ projects[0].type }}</p>
+        <p class="project-desc">{{ projects[0].description }}</p>
+        <div class="project-stack">
+          @for (tech of projects[0].stack; track tech) {
+            <span>{{ tech }}</span>
+          }
+        </div>
+        <button class="view-details-btn" type="button">
+          View Details <i class="bi bi-arrow-up-right"></i>
+        </button>
+      </div>
+      <div class="featured-right">
+        <div class="arch-diagram">
+          <div class="arch-node top">
+            <i class="bi bi-window"></i>
+            <span>Angular Frontend</span>
+          </div>
+          <div class="arch-arrow"><i class="bi bi-arrow-down"></i></div>
+          <div class="arch-node">
+            <i class="bi bi-cloud"></i>
+            <span>ASP.NET Core Web API</span>
+          </div>
+          <div class="arch-arrow"><i class="bi bi-arrow-down"></i></div>
+          <div class="arch-node">
+            <i class="bi bi-layers"></i>
+            <span>Service + Repository</span>
+          </div>
+          <div class="arch-arrow"><i class="bi bi-arrow-down"></i></div>
+          <div class="arch-node bottom">
+            <i class="bi bi-database"></i>
+            <span>SQL Server</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Other Projects Grid -->
+    <div class="projects-grid">
+      @for (project of projects.slice(1); track project.title) {
+        <article class="project-card" (click)="openProject(project)">
+          <div class="card-top">
+            <div class="card-icon">
+              <i class="bi bi-folder2-open"></i>
+            </div>
+            <span class="card-role">{{ project.role }}</span>
+          </div>
+          <h3>{{ project.title }}</h3>
+          <span class="card-type">{{ project.type }}</span>
+          <p>{{ project.description }}</p>
+          <div class="project-stack">
+            @for (tech of project.stack.slice(0, 4); track tech) {
+              <span>{{ tech }}</span>
+            }
+            @if (project.stack.length > 4) {
+              <span class="more">+{{ project.stack.length - 4 }}</span>
+            }
+          </div>
+          <div class="card-footer-link">
+            View Details <i class="bi bi-arrow-right"></i>
+          </div>
+        </article>
+      }
+    </div>
+
+  </div>
+
+  <!-- Modal -->
+  @if (selectedProject; as project) {
+    <div class="modal-backdrop" (click)="closeProject()">
+      <div class="project-modal" (click)="$event.stopPropagation()">
+        <button class="modal-close" type="button" (click)="closeProject()" aria-label="Close">
+          <i class="bi bi-x-lg"></i>
+        </button>
+
+        <div class="modal-tag">{{ project.role }} · {{ project.type }}</div>
+        <h3>{{ project.title }}</h3>
+        <p class="modal-desc">{{ project.description }}</p>
+
+        <h4 class="modal-subtitle">Key Responsibilities</h4>
+        <ul class="modal-list">
+          @for (detail of project.details; track detail) {
+            <li>{{ detail }}</li>
+          }
+        </ul>
+
+        <div class="modal-stack">
+          @for (tech of project.stack; track tech) {
+            <span>{{ tech }}</span>
+          }
+        </div>
+      </div>
+    </div>
+  }
+
+</section>

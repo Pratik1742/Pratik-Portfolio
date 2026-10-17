@@ -1,0 +1,311 @@
+/* ============ CONTACT ============ */
+.contact-section {
+  padding: 110px 0;
+  background: #0a1628;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 10% 90%, rgba(37, 99, 235, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 90% 10%, rgba(14, 165, 233, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Header */
+.section-header {
+  margin-bottom: 60px;
+
+  &.centered {
+    text-align: center;
+    .section-label { justify-content: center; }
+    .section-subtitle { margin: 14px auto 0; max-width: 540px; }
+  }
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Fira Code', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  color: #60a5fa;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+
+  &::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #2563eb;
+    border-radius: 2px;
+  }
+}
+
+.section-title {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 800;
+  color: #f1f5f9;
+  letter-spacing: -0.5px;
+  line-height: 1.15;
+}
+
+.section-subtitle {
+  font-size: 16px;
+  color: #64748b;
+  line-height: 1.75;
+}
+
+/* Layout */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 48px;
+  align-items: start;
+}
+
+/* ---- Info Side ---- */
+.contact-info {
+  h3 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #f1f5f9;
+    margin: 0 0 12px;
+  }
+
+  > p {
+    color: #64748b;
+    font-size: 15px;
+    line-height: 1.75;
+    margin-bottom: 32px;
+  }
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  transition: all 0.25s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(37, 99, 235, 0.25);
+    transform: translateX(4px);
+
+    .link-arrow { opacity: 1; transform: translate(2px, -2px); }
+  }
+}
+
+.link-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(37, 99, 235, 0.12);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #60a5fa;
+  flex-shrink: 0;
+
+  &.linkedin { background: rgba(10, 102, 194, 0.12); border-color: rgba(10, 102, 194, 0.2); color: #5d9fdb; }
+  &.github   { background: rgba(255, 255, 255, 0.06); border-color: rgba(255, 255, 255, 0.1); color: #e2e8f0; }
+}
+
+.link-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.link-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: 'Fira Code', monospace;
+}
+
+.link-value {
+  font-size: 14px;
+  font-weight: 500;
+  color: #cbd5e1;
+}
+
+.link-arrow {
+  color: #334155;
+  font-size: 16px;
+  opacity: 0;
+  transition: all 0.2s ease;
+}
+
+/* Availability Banner */
+.availability-banner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(16, 185, 129, 0.06);
+  border: 1px solid rgba(16, 185, 129, 0.15);
+  border-radius: 14px;
+  padding: 18px 20px;
+}
+
+.avail-dot {
+  width: 12px;
+  height: 12px;
+  background: #10b981;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2); }
+  50%       { box-shadow: 0 0 0 6px rgba(16, 185, 129, 0.1); }
+}
+
+.avail-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #6ee7b7;
+  margin: 0 0 3px;
+}
+
+.avail-sub {
+  font-size: 12px;
+  color: #475569;
+  margin: 0;
+}
+
+/* ---- Form Side ---- */
+.contact-form-wrapper {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 40px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #94a3b8;
+    letter-spacing: 0.3px;
+  }
+
+  input, textarea {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 13px 16px;
+    font-size: 14px;
+    color: #e2e8f0;
+    font-family: 'Inter', sans-serif;
+    outline: none;
+    transition: all 0.25s ease;
+    width: 100%;
+    resize: vertical;
+
+    &::placeholder { color: #334155; }
+
+    &:focus {
+      border-color: rgba(37, 99, 235, 0.5);
+      background: rgba(37, 99, 235, 0.04);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+    }
+  }
+
+  textarea { min-height: 130px; }
+}
+
+.send-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #1d4ed8, #2563eb);
+  color: white;
+  border: none;
+  padding: 15px 32px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  align-self: flex-start;
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
+
+  &:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(37, 99, 235, 0.45);
+  }
+
+  &:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+  }
+}
+
+.success-msg {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: 10px;
+  padding: 14px 16px;
+  color: #6ee7b7;
+  font-size: 13px;
+  font-weight: 500;
+
+  i { font-size: 18px; color: #10b981; }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .contact-layout { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .contact-section { padding: 80px 0; }
+  .contact-form-wrapper { padding: 24px; }
+}

@@ -1,0 +1,333 @@
+<section id="home" class="hero">
+  <!-- Animated Background -->
+  <div class="hero-bg">
+    <div class="hero-shape shape-1"></div>
+    <div class="hero-shape shape-2"></div>
+    <div class="hero-shape shape-3"></div>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <div class="container hero-content">
+    <div class="row align-center hero-row">
+
+      <!-- Left: Text -->
+      <div class="col-lg-7 hero-left">
+        <div class="status-badge">
+          <span class="status-dot"></span>
+          Available for opportunities
+        </div>
+
+        <p class="eyebrow">Hello, I'm</p>
+        <h1>
+          Pratik<br>
+          <span class="name-accent">Bhoskar</span>
+        </h1>
+
+        <div class="role-line">
+          <span class="role-title">.NET Full Stack Developer</span>
+        </div>
+
+        <p class="hero-copy">
+          Software Developer with <strong>2.4+ years</strong> of hands-on experience building
+          enterprise applications and full-stack solutions using <span class="tech-pill">C#</span>,
+          <span class="tech-pill">ASP.NET Core</span>, <span class="tech-pill">Angular</span> &
+          <span class="tech-pill">SQL Server</span>.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projects">
+            View My Work <i class="bi bi-arrow-right"></i>
+          </a>
+          <a class="btn btn-outline" href="assets/Pratik_Bhoskar_Resume.pdf" download="Pratik_Bhoskar_Resume.pdf">
+            <i class="bi bi-download"></i> Download Resume
+          </a>
+          <button class="btn btn-ghost" type="button" (click)="showResume = true">
+            <i class="bi bi-file-earmark-text"></i> Preview Resume
+          </button>
+        </div>
+
+        <div class="hero-social">
+          <a href="https://www.linkedin.com/in/pratik-bhoskar" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-link">
+            <i class="bi bi-linkedin"></i>
+          </a>
+          <a href="https://github.com/Pratik1742" target="_blank" rel="noopener" aria-label="GitHub" class="social-link">
+            <i class="bi bi-github"></i>
+          </a>
+          <a href="mailto:pratikbhoskar17@gmail.com" aria-label="Email" class="social-link">
+            <i class="bi bi-envelope"></i>
+          </a>
+          <div class="social-divider"></div>
+          <span class="social-label">Connect with me</span>
+        </div>
+      </div>
+
+      <!-- Right: Code Card -->
+      <div class="col-lg-5 hero-right">
+        <div class="code-window">
+          <div class="window-bar">
+            <div class="window-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            <div class="window-title">
+              <i class="bi bi-file-earmark-code"></i>
+              developer.ts
+            </div>
+          </div>
+          <div class="code-body">
+            <div class="code-line">
+              <span class="ln">1</span>
+              <span class="kw">const</span>
+              <span class="var"> developer</span>
+              <span class="op"> = &#123;</span>
+            </div>
+            <div class="code-line indent">
+              <span class="ln">2</span>
+              <span class="prop">name</span><span class="op">: </span><span class="str">'Pratik Bhoskar'</span><span class="op">,</span>
+            </div>
+            <div class="code-line indent">
+              <span class="ln">3</span>
+              <span class="prop">role</span><span class="op">: </span><span class="str">'.NET Full Stack Dev'</span><span class="op">,</span>
+            </div>
+            <div class="code-line indent">
+              <span class="ln">4</span>
+              <span class="prop">backend</span><span class="op">: </span><span class="str">'ASP.NET Core'</span><span class="op">,</span>
+            </div>
+            <div class="code-line indent">
+              <span class="ln">5</span>
+              <span class="prop">frontend</span><span class="op">: </span><span class="str">'Angular'</span><span class="op">,</span>
+            </div>
+            <div class="code-line indent">
+              <span class="ln">6</span>
+              <span class="prop">database</span><span class="op">: </span><span class="str">'SQL Server'</span><span class="op">,</span>
+            </div>
+            <div class="code-line indent">
+              <span class="ln">7</span>
+              <span class="prop">experience</span><span class="op">: </span><span class="num">'2.4+ years'</span><span class="op">,</span>
+            </div>
+            <div class="code-line indent">
+              <span class="ln">8</span>
+              <span class="prop">status</span><span class="op">: </span><span class="bool">true</span>
+              <span class="comment"> // open to work</span>
+            </div>
+            <div class="code-line">
+              <span class="ln">9</span>
+              <span class="op">&#125;;</span>
+            </div>
+            <div class="code-line mt-2">
+              <span class="ln">10</span>
+              <span class="caret">▮</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats floating cards -->
+        <div class="stats-row">
+          <div class="stat-chip">
+            <strong>2.4+</strong>
+            <span>Years Exp.</span>
+          </div>
+          <div class="stat-chip">
+            <strong>4+</strong>
+            <span>Projects</span>
+          </div>
+          <div class="stat-chip">
+            <strong>10+</strong>
+            <span>Technologies</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="scroll-indicator">
+    <a href="#about">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+      <span>Scroll down</span>
+    </a>
+  </div>
+</section>
+
+<!-- Resume Preview Modal -->
+@if (showResume) {
+  <div class="resume-backdrop" (click)="showResume = false">
+    <div class="resume-modal" (click)="$event.stopPropagation()">
+      <div class="resume-modal-header">
+        <div class="resume-modal-title">
+          <i class="bi bi-file-earmark-text"></i>
+          <span>ATS Resume Preview</span>
+          <span class="ats-badge">ATS Friendly</span>
+        </div>
+        <div class="resume-modal-actions">
+          <a class="resume-download-btn" href="assets/Pratik_Bhoskar_Resume.pdf" download="Pratik_Bhoskar_Resume.pdf">
+            <i class="bi bi-download"></i> Download PDF
+          </a>
+          <button class="resume-close-btn" type="button" (click)="showResume = false" aria-label="Close">
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="resume-modal-body">
+        <div class="ats-resume">
+
+          <!-- Header -->
+          <header class="ats-header">
+            <h1>Pratik Bhoskar</h1>
+            <p class="ats-role">.NET Full Stack Developer</p>
+            <div class="ats-contact-row">
+              <span><i class="bi bi-envelope"></i> pratikbhoskar17&#64;gmail.com</span>
+              <span class="ats-sep">|</span>
+              <span><i class="bi bi-linkedin"></i> linkedin.com/in/pratik-bhoskar</span>
+              <span class="ats-sep">|</span>
+              <span><i class="bi bi-geo-alt"></i> India</span>
+            </div>
+          </header>
+
+          <hr class="ats-divider" />
+
+          <!-- Summary -->
+          <section class="ats-section">
+            <h2>Professional Summary</h2>
+            <p>
+              Software Developer with 2.4+ years of hands-on experience building business applications
+              and full-stack solutions using C#, ASP.NET Core, Web API, Angular, Entity Framework Core
+              and Microsoft SQL Server. Experienced in developing RESTful APIs, implementing business logic,
+              creating responsive UIs, and troubleshooting across full-stack layers.
+            </p>
+          </section>
+
+          <hr class="ats-divider" />
+
+          <!-- Experience -->
+          <section class="ats-section">
+            <h2>Professional Experience</h2>
+
+            <div class="ats-job">
+              <div class="ats-job-head">
+                <div>
+                  <h3>Software Developer</h3>
+                  <p class="ats-company">Clarimind IT Innovation</p>
+                </div>
+                <span class="ats-date">Apr 2026 – Present</span>
+              </div>
+              <ul>
+                <li>Develop and maintain web and desktop applications using C#, ASP.NET Core, ASP.NET MVC, Web API and WinForms.</li>
+                <li>Translate business requirements into application modules, workflows and database-driven functionality.</li>
+                <li>Build Angular components and services for responsive, role-based user interfaces.</li>
+                <li>Work with SQL Server stored procedures, views, triggers, indexing and query optimization.</li>
+                <li>Apply OOP, dependency injection, repository pattern and layered architecture.</li>
+                <li>Lead module development and collaborate in Agile/Scrum development cycles.</li>
+              </ul>
+            </div>
+
+            <div class="ats-job">
+              <div class="ats-job-head">
+                <div>
+                  <h3>Jr. Software Developer</h3>
+                  <p class="ats-company">Clarimind IT Innovation</p>
+                </div>
+                <span class="ats-date">Dec 2024 – Mar 2026</span>
+              </div>
+              <ul>
+                <li>Independently handled development modules using C#, ASP.NET Core, Web API and Angular.</li>
+                <li>Built and integrated RESTful APIs with CRUD operations, validation and exception handling.</li>
+                <li>Developed responsive Angular components and services for API-driven workflows.</li>
+                <li>Worked with SQL Server stored procedures, views, triggers and query optimization.</li>
+                <li>Collaborated in Agile/Scrum processes with sprint planning and code reviews.</li>
+              </ul>
+            </div>
+
+            <div class="ats-job">
+              <div class="ats-job-head">
+                <div>
+                  <h3>Trainee Software Developer</h3>
+                  <p class="ats-company">Clarimind IT Innovation</p>
+                </div>
+                <span class="ats-date">Jun 2024 – Nov 2024</span>
+              </div>
+              <ul>
+                <li>Started with hands-on exposure to C#, ASP.NET MVC and SQL Server development.</li>
+                <li>Developed CRUD functionality, validations and database interactions.</li>
+                <li>Assisted with debugging, issue analysis, testing and application enhancements.</li>
+              </ul>
+            </div>
+          </section>
+
+          <hr class="ats-divider" />
+
+          <!-- Technical Skills -->
+          <section class="ats-section">
+            <h2>Technical Skills</h2>
+            <div class="ats-skills-grid">
+              <div><strong>Backend:</strong> C#, ASP.NET Core, ASP.NET MVC, Web API, Entity Framework Core, LINQ, ADO.NET</div>
+              <div><strong>Frontend:</strong> Angular, JavaScript, HTML5, CSS3, Bootstrap 5, jQuery, AJAX</div>
+              <div><strong>Database:</strong> Microsoft SQL Server, MySQL, Stored Procedures, Views, Triggers, Indexing</div>
+              <div><strong>Tools:</strong> Git, GitHub, Visual Studio, VS Code, SSMS, Swagger, Postman</div>
+              <div><strong>Architecture:</strong> REST APIs, Layered Architecture, Repository Pattern, Dependency Injection, SOLID</div>
+              <div><strong>Practices:</strong> Agile, Scrum, SDLC, Debugging, Root Cause Analysis, Performance Optimization</div>
+            </div>
+          </section>
+
+          <hr class="ats-divider" />
+
+          <!-- Projects -->
+          <section class="ats-section">
+            <h2>Key Projects</h2>
+
+            <div class="ats-project">
+              <div class="ats-job-head">
+                <div>
+                  <h3>CM Resident Hub</h3>
+                  <p class="ats-company">Housing Society Management System · Team Leader</p>
+                </div>
+              </div>
+              <ul>
+                <li>Full-stack application with role-based workflows for residents, Chairman, Secretary and Accountant.</li>
+                <li>Built Angular UI integrated with ASP.NET Core Web API and SQL Server.</li>
+                <li>Implemented approval workflows, status checks, exception handling and role-based access controls.</li>
+              </ul>
+              <p class="ats-tech"><strong>Tech:</strong> C#, ASP.NET Core, Angular, Web API, EF Core, SQL Server</p>
+            </div>
+
+            <div class="ats-project">
+              <div class="ats-job-head">
+                <div>
+                  <h3>Clear Ticket</h3>
+                  <p class="ats-company">Ticketing &amp; Support Tool</p>
+                </div>
+              </div>
+              <ul>
+                <li>Role-based ticketing system with ticket creation, assignment, escalation and SLA tracking.</li>
+                <li>Implemented performance dashboards and database-driven operations.</li>
+              </ul>
+              <p class="ats-tech"><strong>Tech:</strong> C#, ASP.NET MVC, ADO.NET, JavaScript, Bootstrap 5, SQL Server</p>
+            </div>
+          </section>
+
+          <hr class="ats-divider" />
+
+          <!-- Education -->
+          <section class="ats-section">
+            <h2>Education</h2>
+            <div class="ats-job">
+              <div class="ats-job-head">
+                <div>
+                  <h3>B.E. Information Technology</h3>
+                  <p class="ats-company">Savitribai Phule Pune University (SPPU)</p>
+                </div>
+                <span class="ats-date">2020 – 2024 · CGPA: 7.84</span>
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </div>
+  </div>
+}

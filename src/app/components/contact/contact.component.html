@@ -1,0 +1,102 @@
+<section id="contact" class="contact-section">
+  <div class="contact-bg"></div>
+  <div class="container">
+
+    <div class="section-header centered">
+      <p class="section-label">07. Contact</p>
+      <h2 class="section-title">Let's work together.</h2>
+      <p class="section-subtitle">
+        I'm currently open to new opportunities as a .NET Full Stack Developer.
+        Feel free to reach out — I'd love to connect!
+      </p>
+    </div>
+
+    <div class="contact-layout">
+
+      <!-- Left: Info -->
+      <div class="contact-info">
+        <h3>Get in Touch</h3>
+        <p>Whether you have a job opportunity, a project, or just want to say hi — my inbox is always open.</p>
+
+        <div class="contact-links">
+          <a href="mailto:pratikbhoskar17@gmail.com" class="contact-link">
+            <div class="link-icon"><i class="bi bi-envelope-fill"></i></div>
+            <div class="link-text">
+              <span class="link-label">Email</span>
+              <span class="link-value">pratikbhoskar17&#64;gmail.com</span>
+            </div>
+            <i class="bi bi-arrow-up-right link-arrow"></i>
+          </a>
+
+          <a href="https://www.linkedin.com/in/pratik-bhoskar" target="_blank" rel="noopener" class="contact-link">
+            <div class="link-icon linkedin"><i class="bi bi-linkedin"></i></div>
+            <div class="link-text">
+              <span class="link-label">LinkedIn</span>
+              <span class="link-value">pratik-bhoskar</span>
+            </div>
+            <i class="bi bi-arrow-up-right link-arrow"></i>
+          </a>
+
+          <a href="https://github.com/Pratik1742" target="_blank" rel="noopener" class="contact-link">
+            <div class="link-icon github"><i class="bi bi-github"></i></div>
+            <div class="link-text">
+              <span class="link-label">GitHub</span>
+              <span class="link-value">Pratik1742</span>
+            </div>
+            <i class="bi bi-arrow-up-right link-arrow"></i>
+          </a>
+        </div>
+
+        <div class="availability-banner">
+          <span class="avail-dot"></span>
+          <div>
+            <p class="avail-title">Available for opportunities</p>
+            <p class="avail-sub">Open to full-time roles & freelance projects</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Form -->
+      <div class="contact-form-wrapper">
+        <form class="contact-form" (ngSubmit)="onSubmit()" #contactForm="ngForm">
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input id="name" name="name" ngModel required placeholder="John Doe" autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input id="email" name="email" type="email" ngModel required placeholder="john@company.com" autocomplete="email">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input id="subject" name="subject" ngModel placeholder="Job Opportunity / Project Inquiry">
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" ngModel required rows="5"
+              placeholder="Hi Pratik, I'd like to discuss..."></textarea>
+          </div>
+
+          <button type="submit" class="send-btn" [disabled]="contactForm.invalid">
+            <span>Send Message</span>
+            <i class="bi bi-send-fill"></i>
+          </button>
+
+          @if (submitted) {
+            <div class="success-msg">
+              <i class="bi bi-check-circle-fill"></i>
+              Message sent! This is a demo — connect an email service before publishing.
+            </div>
+          }
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>

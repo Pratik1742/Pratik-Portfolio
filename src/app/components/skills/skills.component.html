@@ -1,0 +1,35 @@
+<section id="skills" class="skills-section">
+  <!-- Background decoration -->
+  <div class="skills-bg-deco"></div>
+
+  <div class="container">
+    <div class="section-header centered">
+      <p class="section-label">02. Technical Skills</p>
+      <h2 class="section-title">Technologies I work with.</h2>
+      <p class="section-subtitle">
+        A curated set of tools and technologies I use daily to build robust, scalable applications.
+      </p>
+    </div>
+
+    <div class="skills-grid">
+      @for (group of groups; track group.title) {
+        <div class="skill-card">
+          <div class="skill-card-header">
+            <div class="skill-icon-box">
+              <i class="bi" [class]="group.icon"></i>
+            </div>
+            <div>
+              <h3>{{ group.title }}</h3>
+              <p class="skill-count">{{ group.skills.length }} technologies</p>
+            </div>
+          </div>
+          <div class="skill-tags">
+            @for (skill of group.skills; track skill) {
+              <span class="skill-tag">{{ skill }}</span>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
